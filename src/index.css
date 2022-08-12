@@ -1,13 +1,176 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+    border: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 60px;
+}
+
+
+/* NAVIGATION*/
+
+.nav-bar {
+    padding: 20px 50px;
+    background-color: black;    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 150%;
+}
+
+.logo-container {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-content: flex-start;
+}
+
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+}
+
+
+/*FOOTER*/
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(220, 220, 220);
+}
+
+.footer-message {
+    padding: 20px 0;
+    font-style: italic;
+}
+
+
+/*SECTION LIST*/
+.section, .list-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.list-section {
+    background: rgb(131, 180, 255);
+}
+
+.welcome, .text {
+    padding: 50px;
+    width: 50%;
+    text-align: left;
+}
+
+
+/*GENERAL STYLES*/
+/*Links*/
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: rgb(255, 119, 0);
+}
+
+/*Headers*/
+h1 {
+    font-size: 400%;
+    color: white;
+    padding: 20px 0;
+}
+
+h2 {
+    font-size: 250%;
+    color: rgb(199, 243, 255);
+    padding: 20px 0;
+}
+
+h3::after {
+    content: "";
+    background-color: black;
+    padding: 0 170px;
+    margin-left: 10px;
+
+}
+
+
+/*COURSE LIST*/
+.course-list-container {
+    width: 100%;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+
+.section-title {
+    padding: 50px;
+    font-size: 200%;
+    font-weight: 600;
+}
+
+.courses {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.a-course {
+    width: 250px;
+    background-color: rgb(158, 220, 255);
+    margin: 0 20px 20px;
+}
+
+.course-img {
+    width: 250px;
+}
+
+.course-details {
+    padding: 20px;
+    text-align: left;
+
+}
+
+.commands {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 2px solid black;
+}
+
+.icon {
+    font-size: 120%;
 }
