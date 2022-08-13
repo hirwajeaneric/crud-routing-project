@@ -1,11 +1,14 @@
 import React from 'react'
 
-const edit = () => {
+const Edit = () => {
   return (
-    <div>
-        <h1>Edit</h1>
-    </div>
+    <React.Fragment>
+      <section className="aSection">
+        <h1 className='dark-header'>Edit Course</h1>
+        
+      </section>
+    </React.Fragment>
   )
 }
 
-export default edit
+export default Edit

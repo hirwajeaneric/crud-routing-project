@@ -6,7 +6,7 @@ const Footer = () => {
     <React.Fragment>
       <div className='footer'>
         <Link to={'/'} className="logo">
-          <span>CRUD ROUTING</span>
+          <span>LOREM IPSUM</span>
         </Link>
         <p className='footer-message'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores hic modi voluptatem fugit magnam soluta assumenda, doloremque repellat pariatur at expedita atque sit alias officia, a ipsam laudantium, voluptates ea.</p>
       </div>
