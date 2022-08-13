@@ -1,24 +1,28 @@
 {
     "courses": [
         {
+            "id": "1",
             "name":"Linux Programming",
             "lecturer":"NIYODUSENGA Pierre",
             "credit":"4",
             "cost":"60,000",
             "photo": "https://www.cio.com/wp-content/uploads/2021/12/artificial-intelligence_brain_machine-learning_digital-transformation_world-networking-100777429-orig-1.jpg?quality=50&strip=all"
         },{
+            "id": "2",
             "name":"OOP",
             "lecturer":"MICOMYIZA Patrick",
             "credit":"4",
             "cost":"60,000",
             "photo":"https://www.gniotgroup.edu.in/blog/wp-content/uploads/2022/01/IT-1.jpg"
         },{
+            "id": "3",
             "name":"Java Programming",
             "lecturer":"John Doe",
             "credit":"4",
             "cost":"60,000",
             "photo":"https://www.aeccglobal.com.np/images/easyblog_articles/247/top-information-technology-courses-in-australia.webp"
         },{
+            "id": "4",
             "name":"Software Modeling and Design",
             "lecturer":"MUKWENDE Placide",
             "credit":"3",

@@ -1,11 +1,15 @@
 import React from 'react'
 
-const details = () => {
+const Details = () => {
   return (
-    <div>
-        <h1>Details</h1>
-    </div>
+    <React.Fragment>
+      <section className="aSection">
+        <h1 className='dark-header'>View Course</h1>
+
+
+      </section>
+    </React.Fragment>
   )
 }
 
-export default details
+export default Details

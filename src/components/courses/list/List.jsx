@@ -1,20 +1,34 @@
-import React from 'react'
-import CourseList from '../courseList/CourseList'
+import React from 'react';
+import CourseList from '../courseList/CourseList';
+// import hero from '../../../assets/img/hero.png';
+import {createUseStyles} from 'react-jss';
 
-const list = () => {
+const useStyles = createUseStyles({
+  paragraph: {
+    color: "white",
+    fontSize: "140%"
+  },
+  headers: {
+    fontSize: "400%",
+  }
+}); 
+
+const List = () => {
+  const classes = useStyles();
   return (
     <React.Fragment>
       <section className='section list-section'>
-        <div className="welcome">
-          <h2>Welcome</h2>
-          <h3>To</h3>
-          <h1>DESIGN 250</h1>
-        </div>
-        <div className='text'>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque velit dicta, 
-            distinctio accusantium nulla magni, asperiores odio eaque deleniti, 
-            ducimus culpa non sed nisi et! Doloribus voluptas distinctio pariatur adipisci!
-          </p>
+        <div className='overlay'> 
+          <div className="welcome">
+            <h2>Welcome To</h2>
+            <h1>LOREM IPSUM</h1>
+            <p className={classes.paragraph}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque velit dicta, 
+              distinctio accusantium nulla magni, asperiores odio eaque deleniti, 
+              ducimus culpa non sed nisi et! Doloribus voluptas distinctio pariatur adipisci!
+            </p>
+          </div>
+          <div className='text'>
+          </div>
         </div>
       </section>
       <CourseList />
@@ -22,4 +36,4 @@ const list = () => {
   )
 }
 
-export default list
+export default List
