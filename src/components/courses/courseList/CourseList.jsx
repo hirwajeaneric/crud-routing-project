@@ -4,7 +4,7 @@ import { BiEdit } from 'react-icons/bi';
 import { TiDeleteOutline } from 'react-icons/ti'; 
 import { Link } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
-import { CourseServices } from '../../../services/CourseServiceS';
+import { CourseServices } from '../../../services/CourseServices';
 import Spinner from '../../Spinner/Spinner';
 
 const useStyles = createUseStyles({
@@ -15,7 +15,7 @@ const useStyles = createUseStyles({
         flexWrap: "nowrap",
         alignItems: "center",
         '& a':{
-            backgroundColor: "blue",
+            backgroundColor: "#0080ff",
             color: "white",
             textAlign: "center",
             padding: 10,
@@ -105,7 +105,7 @@ const CourseList = () => {
                                                 </div>
                                                 <div className={classes.data}>
                                                     <strong>Credits: </strong>
-                                                    <span>{course.credit}</span>
+                                                    <span>{course.credits}</span>
                                                 </div>
                                                 <div className={classes.data}>
                                                     <strong>Cost: </strong>
