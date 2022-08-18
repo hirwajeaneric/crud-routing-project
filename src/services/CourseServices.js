@@ -13,4 +13,8 @@ export class CourseServices {
         return axios.post(dataURL, course)
     }
 
+    static getOneCourse(courseId){
+        let dataURL = `${this.serverURL}/courses/${courseId}`;
+        return axios.get(dataURL);
+    }
 }

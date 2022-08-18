@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react';
 import { createUseStyles } from 'react-jss'
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { CourseServices } from '../../../services/CourseServices';
+import Spinner from '../../Spinner/Spinner';
 
 const useStyles = createUseStyles({
   aSection:{
@@ -47,32 +50,66 @@ const useStyles = createUseStyles({
 
 const Details = () => {
   
+  let {courseId} = useParams();
+
   const classes = useStyles();
+
+  let [state, setState] = useState({
+    loading: false,
+    course: {},
+    errorMessage: '',
+    group: {}
+  });
+
+  useEffect(()=>{
+    setState({...state, loading: true});
+    CourseServices.getOneCourse(courseId)
+      .then(response => {
+        setState({
+          ...state, 
+          loading: false,
+          course: response.data,
+        });
+      })
+      .catch(error => {
+        setState({
+          ...state,
+          loading: false,
+          errorMessage: error.message
+        });
+      })  
+  },[courseId]);
+
+  let {loading, course, errorMessage, group} = state;
 
   return (
     <React.Fragment>
       <section className={classes.aSection}>
-        <div className={classes.user}>
-          <img src='https://www.gniotgroup.edu.in/blog/wp-content/uploads/2022/01/IT-1.jpg' alt=''/>
-          <table>
-            <tr>
-              <th>Name: </th>
-              <td>OOP</td>
-            </tr>
-            <tr>
-              <th>Lecturer: </th>
-              <td>MUKWENDE Placide</td>
-            </tr>
-            <tr>
-              <th>Creadits: </th>
-              <td>4</td>
-            </tr>
-            <tr>
-              <th>Cost: </th>
-              <td>$60,000</td>
-            </tr>
-          </table>
-        </div>
+        {
+          loading ? <Spinner/> : <React.Fragment>
+            <div className={classes.user}>
+              <img src='https://www.gniotgroup.edu.in/blog/wp-content/uploads/2022/01/IT-1.jpg' alt=''/>
+              <table>
+                <tr>
+                  <th>Name: </th>
+                  <td>{course.name}</td>
+                </tr>
+                <tr>
+                  <th>Lecturer: </th>
+                  <td>{course.lecturer}</td>
+                </tr>
+                <tr>
+                  <th>Creadits: </th>
+                  <td>{course.credits}</td>
+                </tr>
+                <tr>
+                  <th>Cost: </th>
+                  <td>{course.cost}</td>
+                </tr>
+              </table>
+            </div>
+          </React.Fragment>
+        }
         <Link to={"/courses/"} className={classes.backButton}>Back</Link>
       </section>
     </React.Fragment>
