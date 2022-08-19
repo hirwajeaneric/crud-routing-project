@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { createUseStyles } from 'react-jss'
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { CourseServices } from '../../../services/CourseServices';
 import Spinner from '../../Spinner/Spinner';
 
@@ -50,15 +50,22 @@ const useStyles = createUseStyles({
 
 const Details = () => {
   
+  let navigate = useNavigate();
+
   let {courseId} = useParams();
 
   const classes = useStyles();
 
   let [state, setState] = useState({
     loading: false,
-    course: {},
+    course: {
+      name: "",
+      lecturer: "",
+      credits: "",
+      cost: "",
+      photo: ""
+    },
     errorMessage: '',
-    group: {}
   });
 
   useEffect(()=>{
